@@ -77,6 +77,37 @@ function unitArt(i){const arts=[
 function setupHome(){let box=document.getElementById('chapterButtons');box.innerHTML='';let chapters=[...new Set(QUESTIONS.map(q=>q.chapter))];chapters.forEach((ch,i)=>{let b=document.createElement('button');b.className='chapter';b.innerHTML=`<div class="chapter-art">${unitArt(i)}</div><div class="chapter-emoji" aria-hidden="true">${["🗾 🤝 📜","📜 🏛️ 🗳️","🌍 🚢 🏴","🪖 🕊️ 🌐"][i]}</div><b>UNIT 0${i+1} · ${QUESTIONS.filter(q=>q.chapter===ch).length} QUESTIONS</b><small>${ch}</small>`;b.onclick=()=>start(QUESTIONS.map((q,n)=>q.chapter===ch?n:-1).filter(n=>n>=0),ch);box.appendChild(b)});updateStats()}
 function start(ids,label){queue=ids.map(i=>({...QUESTIONS[i],id:i}));index=0;currentAnswers=[];wrongThisRun=[];correctStreak=0;mode=label;document.getElementById('modeLabel').textContent=label;show('quiz');render()}
 const FURI={"日清修好条規":"にっしんしゅうこうじょうき","樺太":"からふと","千島列島":"ちしまれっとう","江華島事件":"こうかとうじけん","日朝修好条規":"にっちょうしゅうこうじょうき","琉球処分":"りゅうきゅうしょぶん","壬午軍乱":"じんごぐんらん","甲申政変":"こうしんせいへん","天津条約":"てんしんじょうやく","甲午農民戦争":"こうごのうみんせんそう","下関条約":"しものせきじょうやく","三国干渉":"さんごくかんしょう","日英同盟":"にちえいどうめい","日露戦争":"にちろせんそう","ポーツマス条約":"ぽーつますじょうやく","帝国主義":"ていこくしゅぎ","第二次産業革命":"だいにじさんぎょうかくめい","ベルリン会議":"べるりんかいぎ","民族自決":"みんぞくじけつ","三国同盟":"さんごくどうめい","三国協商":"さんごくきょうしょう","塹壕":"ざんごう","総力戦":"そうりょくせん","二月革命":"にがつかくめい","十月革命":"じゅうがつかくめい","連合国":"れんごうこく","中央同盟国":"ちゅうおうどうめいこく","休戦":"きゅうせん","講和":"こうわ","国際連盟":"こくさいれんめい","米騒動":"こめそうどう","寺内正毅":"てらうちまさたけ","原敬":"はらたかし","普通選挙法":"ふつうせんきょほう","治安維持法":"ちあんいじほう","大正デモクラシー":"たいしょうでもくらしー","藩閥":"はんばつ","憲法":"けんぽう","議会":"ぎかい","条約":"じょうやく","植民地":"しょくみんち","皇帝":"こうてい","賠償":"ばいしょう","勢力圏":"せいりょくけん","講和会議":"こうわかいぎ","労働者":"ろうどうしゃ","選挙権":"せんきょけん"};
+
+function sound(type){
+  const toggle=document.getElementById('soundToggle');
+  if(toggle && !toggle.checked) return;
+  try{
+    const AudioCtx=window.AudioContext||window.webkitAudioContext;
+    if(!AudioCtx) return;
+    const ctx=sound.ctx||(sound.ctx=new AudioCtx());
+    if(ctx.state==='suspended') ctx.resume().catch(()=>{});
+    const patterns={
+      ok:[[660,0],[880,0.12]],
+      bad:[[220,0]],
+      win:[[523,0],[659,0.13],[784,0.26],[1047,0.39]],
+      tap:[[440,0]]
+    };
+    const notes=patterns[type]||patterns.tap;
+    const start=ctx.currentTime;
+    notes.forEach(([freq,delay])=>{
+      const osc=ctx.createOscillator();
+      const gain=ctx.createGain();
+      osc.type='sine';
+      osc.frequency.value=freq;
+      gain.gain.setValueAtTime(0.0001,start+delay);
+      gain.gain.exponentialRampToValueAtTime(0.12,start+delay+0.015);
+      gain.gain.exponentialRampToValueAtTime(0.0001,start+delay+0.16);
+      osc.connect(gain);gain.connect(ctx.destination);
+      osc.start(start+delay);osc.stop(start+delay+0.17);
+    });
+  }catch(e){/* 効果音が使えなくてもクイズ本体は動作させる */}
+}
+
 function rubyText(str){return String(str)}
 function hintFor(q){let answer=q.opts[q.a];let exp=q.exp;let clue=exp.replace(answer,'（答えの語句）');if(clue===exp)clue='正解の選択肢に関係する時代・人物・出来事を、解説の内容から考えてみよう。';else clue=clue.slice(0,100);return '手掛かり：'+clue+'。選択肢の中から、時代や出来事のつながりを考えてみよう。'}
 let correctStreak=0;
