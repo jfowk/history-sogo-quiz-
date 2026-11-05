@@ -76,6 +76,61 @@ body[data-unit="3"]{background-image:radial-gradient(ellipse at 78% 15%,rgba(164
   .choices{gap:6px}.feedback{padding:9px;margin-top:8px}
 }
 
+
+
+/* HISTORY QUEST VER.3: archival / historical visual language */
+:root{--text:#fff9e9;--muted:#d6c9ad;--line:#786344;--a:#f2c66d;--b:#b9d9d0;--panel:#202b3d}
+body{font-weight:600;background-color:#111827;background-image:radial-gradient(ellipse at 50% 0%,rgba(211,171,100,.19),transparent 42%),repeating-linear-gradient(0deg,rgba(235,214,174,.018) 0 1px,transparent 1px 5px),linear-gradient(145deg,#1c2a3b,#101827 72%)}
+.wrap{max-width:820px}
+header{padding:7px 10px 10px;border-bottom:1px solid rgba(214,180,117,.42);position:relative}
+header:after{content:"✦ ━━━━━━━━━━━━━━━━━ ✦";position:absolute;left:50%;bottom:-8px;transform:translateX(-50%);padding:0 9px;background:#172337;color:#c6a66b;font-size:9px;letter-spacing:2px;white-space:nowrap}
+.brand{font-weight:1000;letter-spacing:.09em;text-shadow:0 2px 10px rgba(0,0,0,.35)}
+.brand span{color:#f0c979}
+.pill,.tag{border-color:#92764b;background:rgba(25,35,50,.72);color:#f1dfb9;font-weight:800;letter-spacing:.04em}
+.hero{border:2px solid #9b7b4b;border-radius:18px;padding:25px 21px;background:linear-gradient(115deg,rgba(65,52,43,.97),rgba(31,43,61,.97) 68%),radial-gradient(circle at 88% 15%,#e9c77e,transparent 32%);box-shadow:inset 0 0 0 4px rgba(240,207,145,.08),0 14px 30px rgba(0,0,0,.27)}
+.hero:before{content:"CHRONICLE  ·  近代への記録";display:inline-block;border:1px solid rgba(232,201,143,.55);padding:4px 9px;margin-bottom:8px;color:#f0d49b;font-size:10px;font-weight:950;letter-spacing:.13em}
+.hero h1{font-weight:1000;letter-spacing:.045em;text-shadow:0 3px 0 rgba(0,0,0,.24),0 0 22px rgba(244,202,123,.14)}
+.hero p{font-weight:700;color:#f0e5d1}
+.eyebrow{color:#f0ce8d;font-weight:1000;letter-spacing:.17em}
+.panel{position:relative;border:1px solid #786344;border-radius:16px;background:linear-gradient(145deg,rgba(39,51,67,.97),rgba(25,36,52,.98));box-shadow:inset 0 0 0 3px rgba(221,190,135,.045),0 10px 25px rgba(0,0,0,.2)}
+.panel:before,.qcard:before{content:"";position:absolute;inset:6px;border:1px solid rgba(205,169,105,.16);border-radius:11px;pointer-events:none}
+.section-title{font-weight:1000;color:#f5d99f;letter-spacing:.045em;text-shadow:0 1px 8px rgba(0,0,0,.3)}
+.chapter{position:relative;overflow:hidden;border:1px solid #9a7b50;border-radius:12px;background:linear-gradient(135deg,#39485a,#263448 70%);box-shadow:inset 0 0 0 2px rgba(229,194,132,.08),0 4px 0 #182334,0 7px 12px rgba(0,0,0,.17);font-weight:800;transition:transform .12s,filter .12s}
+.chapter:after{content:"❧";position:absolute;right:9px;bottom:-10px;font-size:48px;color:rgba(235,202,145,.10);pointer-events:none}
+.chapter:active,.btn:active,.choice:active,.toolbtn:active{transform:translateY(2px);filter:brightness(1.12)}
+.chapter b{color:#f3cf86;font-size:13px;font-weight:1000;letter-spacing:.07em}
+.chapter small{color:#f0e5d1;font-weight:750}
+.btn{font-weight:1000;letter-spacing:.025em;background:linear-gradient(180deg,#ffe4a1,#dcae55);border:1px solid #ffdfa0;box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 4px 0 #806039,0 7px 12px rgba(0,0,0,.2);text-shadow:0 1px rgba(255,255,255,.25)}
+.btn.secondary{background:linear-gradient(180deg,#52647a,#34465d);border:1px solid #8d9caf;box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 4px 0 #1a293b,0 7px 12px rgba(0,0,0,.18);color:#fff8e9}
+.btn.ghost{border:1px solid #8d795b;color:#e8d8b9;background:rgba(22,32,46,.7);box-shadow:0 3px 0 #101927}
+.stats .stat{border:1px solid #796548;background:linear-gradient(145deg,#344358,#243247);box-shadow:inset 0 0 0 2px rgba(226,191,129,.06)}
+.stat strong{font-weight:1000;color:#f0cf8b;text-shadow:0 0 12px rgba(240,207,139,.18)}
+.topline{font-weight:850;color:#e4d5b8;letter-spacing:.035em}
+.progress{height:11px;border:1px solid #8a704b;background:#101a29;box-shadow:inset 0 1px 3px #000}
+.bar{background:linear-gradient(90deg,#b87b42,#f4d17d,#b8d9cf);box-shadow:0 0 10px rgba(241,203,126,.3)}
+.battle{border:2px solid #a98a57;background:linear-gradient(125deg,#3b4658,#1c2a40 62%,#44343b);box-shadow:inset 0 0 0 4px rgba(239,205,143,.07),0 12px 24px rgba(0,0,0,.3)}
+.battle:after{content:"⚜";position:absolute;right:12px;top:38px;color:rgba(244,211,151,.15);font-size:50px;pointer-events:none}
+.enemy-name{font-weight:1000;color:#ffe5a9;text-shadow:0 1px 8px rgba(255,214,143,.18)}
+.qcard{position:relative;border:2px solid #94794f;border-radius:17px;background:linear-gradient(145deg,#2e3c50,#1d2a3e);box-shadow:inset 0 0 0 4px rgba(226,192,133,.055),0 12px 28px rgba(0,0,0,.25)}
+.qnum{font-weight:1000;color:#f1cc82;letter-spacing:.13em}
+.illustration{border:1px solid #96784e;background:linear-gradient(120deg,#3c4c5e,#2b384c);box-shadow:inset 0 0 0 3px rgba(235,200,138,.06)}
+.ill-caption{font-weight:800;color:#f4ead8}
+.qtext{font-weight:950;letter-spacing:.015em;line-height:1.58;color:#fff9ed;text-shadow:0 1px 5px rgba(0,0,0,.25)}
+.choice{border:1px solid #8a7658;background:linear-gradient(110deg,#35475e,#293a50);font-weight:800;box-shadow:inset 0 1px 0 rgba(255,255,255,.055),0 3px 0 #172334;transition:transform .12s,filter .12s,border-color .12s}
+.choice .letter{background:linear-gradient(145deg,#b48b50,#80633f);color:#fff6df;border:1px solid #d7b77c;font-weight:1000;box-shadow:inset 0 1px rgba(255,255,255,.2)}
+.choice.correct{background:linear-gradient(110deg,#1d6255,#16483f);border-color:#70d8b7;box-shadow:0 0 0 1px rgba(112,216,183,.15),0 3px 0 #10372f}
+.choice.wrong{background:linear-gradient(110deg,#693d48,#4d2d3b);border-color:#e28b91;box-shadow:0 3px 0 #321d29}
+.toolbtn{border:1px solid #8c785a;background:linear-gradient(145deg,#40536a,#2b3d53);color:#fff3dc;font-weight:900;box-shadow:0 3px 0 #19283a}
+.hintbox,.wordbox{border:1px solid #9b8055;background:linear-gradient(120deg,#3c4652,#303d4d);color:#fff0d5;font-weight:700}
+.wordchip{background:#4a5663;border:1px solid #a18a66;color:#fff4df;font-weight:800}
+.feedback{font-weight:750;border-width:1px;box-shadow:0 5px 14px rgba(0,0,0,.16)}
+.feedback b{font-weight:1000;letter-spacing:.03em}
+.score{font-weight:1000;color:#f4d18c;text-shadow:0 3px 0 #6d5133,0 0 18px rgba(244,209,140,.22)}
+.review-item{font-weight:650;border-bottom-color:rgba(205,173,119,.32)}
+.review-item b{font-weight:950;color:#fff0d2}
+footer{color:#c3b69d;font-weight:650}
+@media(max-width:600px){.hero{padding:19px 15px}.hero h1{letter-spacing:.025em}.panel{border-radius:14px}.chapter{box-shadow:inset 0 0 0 2px rgba(229,194,132,.07),0 3px 0 #182334}.qtext{font-weight:950}.choice{font-weight:800}}
+
 </style></head><body><div class="wrap"><header><div class="brand">📚 HISTORY <span>QUEST</span></div><div class="pill">高校「歴史総合」基本</div></header>
 <section id="home"><div class="hero"><div class="eyebrow">100 QUESTIONS · 4 UNITS</div><h1>歴史総合<br>4択クエスト</h1><p>中学生でも理解しやすい言葉で、重要語句を覚えよう。ヒントと語群も使えるよ！</p></div><div class="panel"><h3 class="section-title">🧭 単元を選ぶ</h3><div class="chapters" id="chapterButtons"></div></div><div class="panel"><h3 class="section-title">🎮 クイックスタート</h3><div class="actions"><button class="btn" id="allBtn">全100問に挑戦</button><button class="btn secondary" id="randomBtn">ランダム20問</button><button class="btn secondary" id="wrongBtn">間違えた問題を復習</button><button class="btn ghost" id="resetBtn">学習記録をリセット</button></div></div><div class="panel"><h3 class="section-title">📈 学習記録</h3><div class="stats"><div class="stat"><strong id="attempted">0</strong><small>回答した問題</small></div><div class="stat"><strong id="mastered">0</strong><small>正解した問題</small></div><div class="stat"><strong id="wrongCount">0</strong><small>復習リスト</small></div></div></div></section>
 <section id="quiz" class="hidden"><div class="topline"><span id="modeLabel">単元</span><span id="counter">1 / 20</span></div><div class="progress"><div class="bar" id="bar"></div></div><div class="battle" id="battlePanel" aria-live="polite"><div class="battle-head"><div><div class="enemy-name">⚔ 敵キャラクター：Mr.姫野</div><div class="enemy-sub">HISTORY QUEST · BATTLE</div></div><span class="tag">BOSS</span></div><div class="battle-stage"><div class="enemy-shadow"></div><svg class="enemy-art" id="enemyArt" viewBox="0 0 140 132" role="img" aria-label="メガネをかけた、くるくるパーマでジャージ姿のMr.姫野"><!-- legs and sneakers --><path d="M49 91 L43 113 Q42 119 53 120 L68 118 L73 96 M83 92 L91 111 Q94 118 105 115 L116 110 L101 88" fill="#263b65" stroke="#101827" stroke-width="3" stroke-linejoin="round"/><path d="M40 112 Q31 115 33 122 Q38 128 62 124 L68 120 L63 114Z M91 111 Q91 119 99 123 L121 120 Q128 116 117 110 L106 108Z" fill="#e7e8ed" stroke="#273044" stroke-width="3"/><path d="M51 94 L48 110 M89 94 L99 109" stroke="#d5e3f5" stroke-width="3"/><!-- body tracksuit --><path d="M43 57 Q54 49 72 52 Q91 49 102 61 L106 96 Q84 105 48 98Z" fill="#426da1" stroke="#17233a" stroke-width="3"/><path d="M72 55 L73 99 M49 67 L35 89 Q31 95 39 99 L50 92 M99 66 L112 83 Q117 91 109 96 L101 89" fill="none" stroke="#d7e4f3" stroke-width="4" stroke-linecap="round"/><path d="M61 57 L61 94 M85 56 L85 96" stroke="#31547f" stroke-width="2"/><path d="M68 58 L77 58" stroke="#f3d58c" stroke-width="3"/><!-- neck and face --><path d="M63 47 L63 58 Q72 66 82 57 L80 46" fill="#f2c6a5" stroke="#6d493f" stroke-width="2"/><path d="M47 26 Q48 8 72 9 Q101 9 101 35 L95 57 Q86 72 69 69 Q50 67 45 51Z" fill="#f4cfb1" stroke="#5b443f" stroke-width="3"/><!-- odd, modest curls --><g fill="#654638" stroke="#49352f" stroke-width="2"><circle cx="48" cy="26" r="12"/><circle cx="58" cy="16" r="11"/><circle cx="72" cy="13" r="11"/><circle cx="85" cy="17" r="11"/><circle cx="97" cy="27" r="11"/><circle cx="44" cy="39" r="8"/><circle cx="99" cy="41" r="8"/><path d="M49 26 Q52 15 61 20 Q67 8 75 19 Q84 10 90 23 Q98 24 99 34" fill="none" stroke="#795440" stroke-width="3"/></g><!-- glasses and cute goofy eyes --><g fill="#fff" stroke="#39465a" stroke-width="3"><ellipse cx="61" cy="40" rx="12" ry="10"/><ellipse cx="86" cy="40" rx="12" ry="10"/></g><path d="M73 39 Q74 36 75 39 M48 36 L42 33 M98 35 L104 32" fill="none" stroke="#39465a" stroke-width="2.5" stroke-linecap="round"/><circle cx="65" cy="40" r="3.5" fill="#4c5664"/><circle cx="82" cy="40" r="3.5" fill="#4c5664"/><circle cx="66" cy="38" r="1.2" fill="#fff"/><circle cx="83" cy="38" r="1.2" fill="#fff"/><path d="M69 55 Q78 61 86 53" fill="none" stroke="#a85e65" stroke-width="3" stroke-linecap="round"/><path d="M52 51 Q57 54 61 51 M88 51 Q93 54 96 50" fill="none" stroke="#e99b92" stroke-width="2"/></svg><div class="damage-pop" id="damagePop">−100 DAMAGE!</div><div class="battle-message" id="battleMessage">問題に正解して<br>Mr.姫野にダメージ！</div></div><div class="hp-row"><span class="hp-label">HP</span><div class="hp-track"><div class="hp-fill" id="enemyHpFill"></div></div><span class="hp-number" id="enemyHpText">1000 / 1000</span></div></div><div class="qcard"><div class="qnum" id="qnum"></div><div class="tag" id="qchapter"></div><div class="illustration"><span class="ill-icon" id="illIcon">🗾</span><span class="ill-caption" id="illCaption">年代や場所を思い浮かべよう</span></div><div class="qtext" id="qtext"></div><div class="choices" id="choices"></div><div class="tools"><button class="toolbtn" id="hintBtn">💡 ヒントを見る</button><button class="toolbtn" id="wordBtn">📖 語群を見る</button></div><div id="hintBox" class="hintbox hidden"></div><div id="wordBox" class="wordbox hidden"><b>この単元の重要語句</b><div class="wordchips" id="wordChips"></div></div><div id="feedback" class="hidden" aria-live="polite"></div></div><div class="qfooter"><button class="btn ghost" id="quitBtn">中断して戻る</button><button class="btn" id="nextBtn" disabled>次の問題へ →</button></div></section>
